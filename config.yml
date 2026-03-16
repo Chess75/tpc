@@ -10,8 +10,8 @@ engines:
     silence_stderr: false                 # Suppresses stderr output.
     move_overhead_multiplier: 2.5         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine.
-      Threads: 7                          # Max CPU threads the engine can use.
-      Hash: 4096                           # Max memory (in megabytes) the engine can allocate.
+      Threads: 2                          # Max CPU threads the engine can use.
+      Hash: 1024                           # Max memory (in megabytes) the engine can allocate.
       Move Overhead: 250                  # Increase if your bot flags games too often.
     limits:                               # Limits that end the move calculation early.
       time: 5.0                           # Max time per move in seconds.
@@ -24,8 +24,8 @@ engines:
     silence_stderr: false                 # Suppresses stderr output.
     move_overhead_multiplier: 1.0         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine.
-      Threads: 8                          # Max CPU threads the engine can use.
-      Hash: 10000                           # Max memory (in megabytes) the engine can allocate.
+      Threads: 2                          # Max CPU threads the engine can use.
+      Hash: 100                           # Max memory (in megabytes) the engine can allocate.
       Move Overhead: 150                  # Increase if your bot flags games too often.
       EvalFile: "3check-cb5f517c228b.nnue:antichess-dd3cbe53cd4e.nnue:atomic-2cf13ff256cc.nnue:crazyhouse-8ebf84784ad2.nnue:horde-28173ddccabe.nnue:kingofthehill-978b86d0e6a4.nnue:racingkings-636b95f085e3.nnue"
     limits:                               # Limits that end the move calculation early.
@@ -41,11 +41,11 @@ engines:
     silence_stderr: false                 # Suppresses stderr output.
     move_overhead_multiplier: 1.0         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine.
-      Threads: 7                          # Max CPU threads the engine can use.
-      Hash: 4096                           # Max memory (in megabytes) the engine can allocate.
+      Threads: 2                          # Max CPU threads the engine can use.
+      Hash: 1024                           # Max memory (in megabytes) the engine can allocate.
       Move Overhead: 250                  # Increase if your bot flags games too often.
     limits:                               # Limits that end the move calculation early.
-      time: 5.0                           # Max time per move in seconds.
+    #  time: 5.0                           # Max time per move in seconds.
  
 #      depth: 26                           # Max depth per move.
 #      nodes: 4000000                      # Max nodes per move.
@@ -193,7 +193,7 @@ resign:
   against_humans: false                    # Activate whether these settings should apply against humans.
 
 challenge:                                # Incoming challenges.
-  concurrency: 2                          # Number of games to play simultaneously.
+  concurrency: 4                          # Number of games to play simultaneously.
   max_takebacks: 5                        # Maximum number of takebacks granted to a human.
   bullet_with_increment_only: false       # Whether bullet games against BOTs should only be accepted with increment.
 # min_increment: 0                        # Minimum amount of increment to accept a challenge.
@@ -253,9 +253,9 @@ messages:
   #   {cpu} to insert CPU information
   #   {ram} to insert RAM size
   # Any other words in curly braces will be removed.
-  greeting: "Hi! I'm {me} running {engine}. Good Luck!"                                                              # Message sent to the opponent at the beginning o[...]
-  goodbye: "Good Game!"                                             # Message sent to the opponent after the end of a game.
-  greeting_spectators: "Hi! I'm {me} running {engine}. I hope you enjoy the game!"                            # Message sent to the spectators at the beginning of a game.
+  greeting: "Hi. I'm {me}. Good luck!"                                                              # Message sent to the opponent at the beginning o[...]
+  goodbye: "gg"                                             # Message sent to the opponent after the end of a game.
+  greeting_spectators: "Hi! I'm {me}. I hope you enjoy the game!"                            # Message sent to the spectators at the beginning of a game.
   goodbye_spectators: "Good Bye!"
 
 whitelist:                                # List of users whose challenges are always accepted.
