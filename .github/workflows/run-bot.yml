@@ -39,6 +39,7 @@ jobs:
       - name: engine
         run: |
           chmod +x engines/stockfish
+          chmod +x ./engines/fairy-stockfish_x86-64-bmi2
 
       - name: Run Bot
         run: |
